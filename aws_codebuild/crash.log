@@ -1,0 +1,1324 @@
+2019/03/19 10:25:15 [INFO] Terraform version: 0.11.11  ac4fff416318bf0915a0ab80e062a99ef3724334
+2019/03/19 10:25:15 [INFO] Go runtime version: go1.11.1
+2019/03/19 10:25:15 [INFO] CLI args: []string{"E:\\terraform_0.11.11_windows_amd64\\terraform.exe", "apply"}
+2019/03/19 10:25:15 [DEBUG] Attempting to open CLI config file: C:\Users\205716\AppData\Roaming\terraform.rc
+2019/03/19 10:25:15 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019/03/19 10:25:15 [INFO] CLI command args: []string{"apply"}
+2019/03/19 10:25:15 [INFO] command: empty terraform config, returning nil
+2019/03/19 10:25:15 [DEBUG] command: no data state file found for backend config
+2019/03/19 10:25:15 [DEBUG] New state was assigned lineage "1405463c-f3b1-564c-bc15-0c3e7bf23cc8"
+2019/03/19 10:25:15 [INFO] command: backend initialized: <nil>
+2019/03/19 10:25:15 [DEBUG] checking for provider in "."
+2019/03/19 10:25:15 [DEBUG] checking for provider in "E:\\terraform_0.11.11_windows_amd64"
+2019/03/19 10:25:15 [DEBUG] checking for provider in ".terraform\\plugins\\windows_amd64"
+2019/03/19 10:25:15 [DEBUG] found provider "terraform-provider-aws_v2.2.0_x4.exe"
+2019/03/19 10:25:15 [DEBUG] found valid plugin: "aws", "2.2.0", "E:\\terraform\\terraform_practice\\aws_codebuild\\.terraform\\plugins\\windows_amd64\\terraform-provider-aws_v2.2.0_x4.exe"
+2019/03/19 10:25:15 [DEBUG] checking for provisioner in "."
+2019/03/19 10:25:15 [DEBUG] checking for provisioner in "E:\\terraform_0.11.11_windows_amd64"
+2019/03/19 10:25:15 [DEBUG] checking for provisioner in ".terraform\\plugins\\windows_amd64"
+2019/03/19 10:25:15 [INFO] command: backend <nil> is not enhanced, wrapping in local
+2019/03/19 10:25:15 [INFO] backend/local: starting Apply operation
+2019/03/19 10:25:19 [DEBUG] New state was assigned lineage "fd8aff49-29db-698f-5447-f4f8009bf7b6"
+2019/03/19 10:25:20 [INFO] terraform: building graph: GraphTypeInput
+2019/03/19 10:25:20 [TRACE] ConfigTransformer: Starting for path: []
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.ConfigTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.LocalTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.OutputTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.OrphanOutputTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+2019/03/19 10:25:20 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/03/19 10:25:20 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:20 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"code_build_policy", Type:"aws_iam_role_policy", RawCount:(*config.RawConfig)(0xc0003cc000), RawConfig:(*config.RawConfig)(0xc0003947e0), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/03/19 10:25:20 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_codebuild_project.tomcat
+2019/03/19 10:25:20 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"tomcat", Type:"aws_codebuild_project", RawCount:(*config.RawConfig)(0xc0003cc0e0), RawConfig:(*config.RawConfig)(0xc0003cc070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/03/19 10:25:20 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:20 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"codebuild_servicerole", Type:"aws_iam_role", RawCount:(*config.RawConfig)(0xc000394770), RawConfig:(*config.RawConfig)(0xc000394700), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+2019/03/19 10:25:20 [DEBUG] Resource state not found for "aws_codebuild_project.tomcat": aws_codebuild_project.tomcat
+2019/03/19 10:25:20 [DEBUG] Resource state not found for "aws_iam_role.codebuild_servicerole": aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:20 [DEBUG] Resource state not found for "aws_iam_role_policy.code_build_policy": aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.RootVariableTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+2019/03/19 10:25:20 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/03/19 10:25:20 [TRACE] Attach provider request: []string{} aws
+2019/03/19 10:25:20 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"aws", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000394690)}
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [DEBUG] resource aws_iam_role_policy.code_build_policy using provider provider.aws
+2019/03/19 10:25:20 [DEBUG] resource aws_codebuild_project.tomcat using provider provider.aws
+2019/03/19 10:25:20 [DEBUG] resource aws_iam_role.codebuild_servicerole using provider provider.aws
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.graphTransformerMulti:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.RemovedModuleTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [DEBUG] ReferenceTransformer: "aws_codebuild_project.tomcat" references: [aws_iam_role.codebuild_servicerole]
+2019/03/19 10:25:20 [DEBUG] ReferenceTransformer: "provider.aws" references: []
+2019/03/19 10:25:20 [DEBUG] ReferenceTransformer: "aws_iam_role.codebuild_servicerole" references: []
+2019/03/19 10:25:20 [DEBUG] ReferenceTransformer: "aws_iam_role_policy.code_build_policy" references: [aws_iam_role.codebuild_servicerole]
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+2019/03/19 10:25:20 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeAbstractResource
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodeAbstractResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeAbstractResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+2019/03/19 10:25:20 [DEBUG] Starting graph walk: walkInput
+2019/03/19 10:25:20 [TRACE] dag/walk: added new vertex: "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:20 [TRACE] dag/walk: added new vertex: "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:20 [TRACE] dag/walk: added new vertex: "aws_codebuild_project.tomcat"
+2019/03/19 10:25:20 [TRACE] dag/walk: added new vertex: "provider.aws"
+2019/03/19 10:25:20 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
+2019/03/19 10:25:20 [TRACE] dag/walk: added new vertex: "provider.aws (close)"
+2019/03/19 10:25:20 [TRACE] dag/walk: added new vertex: "root"
+2019/03/19 10:25:20 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
+2019/03/19 10:25:20 [TRACE] dag/walk: added edge: "root" waiting on "provider.aws (close)"
+2019/03/19 10:25:20 [TRACE] dag/walk: added edge: "aws_codebuild_project.tomcat" waiting on "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:20 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:20 [TRACE] dag/walk: added edge: "aws_iam_role.codebuild_servicerole" waiting on "provider.aws"
+2019/03/19 10:25:20 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_codebuild_project.tomcat"
+2019/03/19 10:25:20 [TRACE] dag/walk: added edge: "aws_iam_role_policy.code_build_policy" waiting on "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:20 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_codebuild_project.tomcat"
+2019/03/19 10:25:20 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:20 [TRACE] dag/walk: dependencies changed for "aws_iam_role_policy.code_build_policy", sending new deps
+2019/03/19 10:25:20 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
+2019/03/19 10:25:20 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2019/03/19 10:25:20 [TRACE] dag/walk: dependencies changed for "aws_codebuild_project.tomcat", sending new deps
+2019/03/19 10:25:20 [TRACE] dag/walk: dependencies changed for "provider.aws (close)", sending new deps
+2019/03/19 10:25:20 [TRACE] dag/walk: dependencies changed for "aws_iam_role.codebuild_servicerole", sending new deps
+2019/03/19 10:25:20 [TRACE] dag/walk: walking "provider.aws"
+2019/03/19 10:25:20 [TRACE] vertex 'root.provider.aws': walking
+2019/03/19 10:25:20 [TRACE] vertex 'root.provider.aws': evaluating
+2019/03/19 10:25:20 [TRACE] [walkInput] Entering eval tree: provider.aws
+2019/03/19 10:25:20 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:20 [TRACE] root: eval: *terraform.EvalInitProvider
+2019-03-19T10:25:20.314+0530 [DEBUG] plugin: starting plugin: path=E:\terraform\terraform_practice\aws_codebuild\.terraform\plugins\windows_amd64\terraform-provider-aws_v2.2.0_x4.exe args=[E:\terraform\terraform_practice\aws_codebuild\.terraform\plugins\windows_amd64\terraform-provider-aws_v2.2.0_x4.exe]
+2019-03-19T10:25:20.336+0530 [DEBUG] plugin: waiting for RPC address: path=E:\terraform\terraform_practice\aws_codebuild\.terraform\plugins\windows_amd64\terraform-provider-aws_v2.2.0_x4.exe
+2019-03-19T10:25:21.682+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: plugin address: timestamp=2019-03-19T10:25:21.677+0530 address=127.0.0.1:10000 network=tcp
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInterpolateProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInputProvider
+2019/03/19 10:25:21 [TRACE] root: eval: terraform.EvalNoop
+2019/03/19 10:25:21 [TRACE] root: eval: terraform.EvalNoop
+2019/03/19 10:25:21 [TRACE] root: eval: terraform.EvalNoop
+2019/03/19 10:25:21 [TRACE] [walkInput] Exiting eval tree: provider.aws
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': walking
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': walking
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_codebuild_project.tomcat': walking
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "meta.count-boundary (count boundary fixup)"
+2019/03/19 10:25:21 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': walking
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "provider.aws (close)"
+2019/03/19 10:25:21 [TRACE] vertex 'root.provider.aws (close)': walking
+2019/03/19 10:25:21 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': evaluating
+2019/03/19 10:25:21 [TRACE] vertex 'root.provider.aws (close)': evaluating
+2019/03/19 10:25:21 [TRACE] [walkInput] Entering eval tree: meta.count-boundary (count boundary fixup)
+2019/03/19 10:25:21 [TRACE] [walkInput] Entering eval tree: provider.aws (close)
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalCloseProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2019/03/19 10:25:21 [TRACE] [walkInput] Exiting eval tree: meta.count-boundary (count boundary fixup)
+2019/03/19 10:25:21 [TRACE] [walkInput] Exiting eval tree: provider.aws (close)
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "root"
+2019/03/19 10:25:21 [TRACE] vertex 'root.root': walking
+2019/03/19 10:25:21 [INFO] terraform: building graph: GraphTypeValidate
+2019/03/19 10:25:21 [TRACE] ConfigTransformer: Starting for path: []
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ConfigTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.LocalTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.OutputTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.OrphanOutputTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+2019/03/19 10:25:21 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/03/19 10:25:21 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:21 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"codebuild_servicerole", Type:"aws_iam_role", RawCount:(*config.RawConfig)(0xc000394770), RawConfig:(*config.RawConfig)(0xc000394700), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/03/19 10:25:21 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:21 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"code_build_policy", Type:"aws_iam_role_policy", RawCount:(*config.RawConfig)(0xc0003cc000), RawConfig:(*config.RawConfig)(0xc0003947e0), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/03/19 10:25:21 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_codebuild_project.tomcat
+2019/03/19 10:25:21 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"tomcat", Type:"aws_codebuild_project", RawCount:(*config.RawConfig)(0xc0003cc0e0), RawConfig:(*config.RawConfig)(0xc0003cc070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+2019/03/19 10:25:21 [DEBUG] Resource state not found for "aws_iam_role.codebuild_servicerole": aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:21 [DEBUG] Resource state not found for "aws_iam_role_policy.code_build_policy": aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:21 [DEBUG] Resource state not found for "aws_codebuild_project.tomcat": aws_codebuild_project.tomcat
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RootVariableTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+2019/03/19 10:25:21 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/03/19 10:25:21 [TRACE] Attach provider request: []string{} aws
+2019/03/19 10:25:21 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"aws", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000394690)}
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [DEBUG] resource aws_iam_role.codebuild_servicerole using provider provider.aws
+2019/03/19 10:25:21 [DEBUG] resource aws_iam_role_policy.code_build_policy using provider provider.aws
+2019/03/19 10:25:21 [DEBUG] resource aws_codebuild_project.tomcat using provider provider.aws
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.graphTransformerMulti:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.MissingProvisionerTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ProvisionerTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.graphTransformerMulti:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RemovedModuleTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "aws_codebuild_project.tomcat" references: [aws_iam_role.codebuild_servicerole]
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "provider.aws" references: []
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "aws_iam_role.codebuild_servicerole" references: []
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "aws_iam_role_policy.code_build_policy" references: [aws_iam_role.codebuild_servicerole]
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResource
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodeValidatableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+2019/03/19 10:25:21 [DEBUG] Starting graph walk: walkValidate
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "provider.aws (close)"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "root"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "provider.aws"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "aws_iam_role.codebuild_servicerole" waiting on "provider.aws"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "aws_codebuild_project.tomcat" waiting on "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "aws_iam_role_policy.code_build_policy" waiting on "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "root" waiting on "provider.aws (close)"
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "aws_codebuild_project.tomcat", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "aws_iam_role_policy.code_build_policy", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "aws_iam_role.codebuild_servicerole", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "provider.aws (close)", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "provider.aws"
+2019/03/19 10:25:21 [TRACE] vertex 'root.provider.aws': walking
+2019/03/19 10:25:21 [TRACE] vertex 'root.provider.aws': evaluating
+2019/03/19 10:25:21 [TRACE] [walkValidate] Entering eval tree: provider.aws
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInitProvider
+2019/03/19 10:25:21 [TRACE] root: eval: terraform.EvalNoop
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInterpolateProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateProvider
+2019/03/19 10:25:21 [TRACE] root: eval: terraform.EvalNoop
+2019/03/19 10:25:21 [TRACE] root: eval: terraform.EvalNoop
+2019/03/19 10:25:21 [TRACE] [walkValidate] Exiting eval tree: provider.aws
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': walking
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': evaluating
+2019/03/19 10:25:21 [TRACE] [walkValidate] Entering eval tree: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalIf
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateCount
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2019/03/19 10:25:21 [TRACE] [walkValidate] Exiting eval tree: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': expanding/walking dynamic subgraph
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [DEBUG] Resource state not found for "aws_iam_role.codebuild_servicerole": aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "aws_iam_role.codebuild_servicerole" references: []
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': walking
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': evaluating
+2019/03/19 10:25:21 [TRACE] [walkValidate] Entering eval tree: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateResource
+2019/03/19 10:25:21 [TRACE] [walkValidate] Exiting eval tree: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_codebuild_project.tomcat': walking
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_codebuild_project.tomcat': evaluating
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': walking
+2019/03/19 10:25:21 [TRACE] [walkValidate] Entering eval tree: aws_codebuild_project.tomcat
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': evaluating
+2019/03/19 10:25:21 [TRACE] [walkValidate] Entering eval tree: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalIf
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateCount
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalIf
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateCount
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2019/03/19 10:25:21 [TRACE] [walkValidate] Exiting eval tree: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2019/03/19 10:25:21 [TRACE] [walkValidate] Exiting eval tree: aws_codebuild_project.tomcat
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_codebuild_project.tomcat': expanding/walking dynamic subgraph
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': expanding/walking dynamic subgraph
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [DEBUG] Resource state not found for "aws_codebuild_project.tomcat": aws_codebuild_project.tomcat
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "aws_codebuild_project.tomcat" references: []
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [DEBUG] Resource state not found for "aws_iam_role_policy.code_build_policy": aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_codebuild_project.tomcat': walking
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "aws_iam_role_policy.code_build_policy" references: []
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodeValidatableResourceInstance
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': walking
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_codebuild_project.tomcat': evaluating
+2019/03/19 10:25:21 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': evaluating
+2019/03/19 10:25:21 [TRACE] [walkValidate] Entering eval tree: aws_codebuild_project.tomcat
+2019/03/19 10:25:21 [TRACE] [walkValidate] Entering eval tree: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateResourceSelfRef
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateResource
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalValidateResource
+2019/03/19 10:25:21 [TRACE] [walkValidate] Exiting eval tree: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:21 [TRACE] [walkValidate] Exiting eval tree: aws_codebuild_project.tomcat
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "provider.aws (close)"
+2019/03/19 10:25:21 [TRACE] vertex 'root.provider.aws (close)': walking
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "meta.count-boundary (count boundary fixup)"
+2019/03/19 10:25:21 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': walking
+2019/03/19 10:25:21 [TRACE] vertex 'root.provider.aws (close)': evaluating
+2019/03/19 10:25:21 [TRACE] vertex 'root.meta.count-boundary (count boundary fixup)': evaluating
+2019/03/19 10:25:21 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (count boundary fixup)
+2019/03/19 10:25:21 [TRACE] [walkValidate] Entering eval tree: provider.aws (close)
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalCloseProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2019/03/19 10:25:21 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (count boundary fixup)
+2019/03/19 10:25:21 [TRACE] [walkValidate] Exiting eval tree: provider.aws (close)
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "root"
+2019/03/19 10:25:21 [TRACE] vertex 'root.root': walking
+2019/03/19 10:25:21 [INFO] backend/local: apply calling Refresh
+2019/03/19 10:25:21 [INFO] terraform: building graph: GraphTypeRefresh
+2019/03/19 10:25:21 [TRACE] No managed resources in state during refresh, skipping managed resource transformer
+2019/03/19 10:25:21 [TRACE] ConfigTransformer: Starting for path: []
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ConfigTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+2019/03/19 10:25:21 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RootVariableTransformer:
+
+2019/03/19 10:25:21 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/03/19 10:25:21 [TRACE] Attach provider request: []string{} aws
+2019/03/19 10:25:21 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"aws", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000394690)}
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [DEBUG] pruning unused provider provider.aws
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.graphTransformerMulti:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.LocalTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.OutputTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RootTransformer:
+
+root - terraform.graphNodeRoot
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+
+root - terraform.graphNodeRoot
+2019/03/19 10:25:21 [DEBUG] Starting graph walk: walkRefresh
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "root"
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "root"
+2019/03/19 10:25:21 [TRACE] vertex 'root.root': walking
+2019/03/19 10:25:21 [INFO] backend/local: apply calling Plan
+2019/03/19 10:25:21 [INFO] terraform: building graph: GraphTypePlan
+2019/03/19 10:25:21 [TRACE] ConfigTransformer: Starting for path: []
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ConfigTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.LocalTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.OutputTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.OrphanResourceTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.OrphanOutputTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+2019/03/19 10:25:21 [TRACE] AttachResourceConfigTransformer: Beginning...
+2019/03/19 10:25:21 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:21 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"code_build_policy", Type:"aws_iam_role_policy", RawCount:(*config.RawConfig)(0xc0003cc000), RawConfig:(*config.RawConfig)(0xc0003947e0), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/03/19 10:25:21 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_codebuild_project.tomcat
+2019/03/19 10:25:21 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"tomcat", Type:"aws_codebuild_project", RawCount:(*config.RawConfig)(0xc0003cc0e0), RawConfig:(*config.RawConfig)(0xc0003cc070), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/03/19 10:25:21 [TRACE] AttachResourceConfigTransformer: Attach resource config request: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:21 [TRACE] Attaching resource config: &config.Resource{Mode:0, Name:"codebuild_servicerole", Type:"aws_iam_role", RawCount:(*config.RawConfig)(0xc000394770), RawConfig:(*config.RawConfig)(0xc000394700), Provisioners:[]*config.Provisioner(nil), Provider:"", DependsOn:[]string(nil), Lifecycle:config.ResourceLifecycle{CreateBeforeDestroy:false, PreventDestroy:false, IgnoreChanges:[]string(nil)}}
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.AttachResourceConfigTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+2019/03/19 10:25:21 [DEBUG] Resource state not found for "aws_iam_role.codebuild_servicerole": aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:21 [DEBUG] Resource state not found for "aws_iam_role_policy.code_build_policy": aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:21 [DEBUG] Resource state not found for "aws_codebuild_project.tomcat": aws_codebuild_project.tomcat
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RootVariableTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+2019/03/19 10:25:21 [TRACE] ProviderConfigTransformer: Starting for path: []
+2019/03/19 10:25:21 [TRACE] Attach provider request: []string{} aws
+2019/03/19 10:25:21 [TRACE] Attaching provider config: *config.ProviderConfig{Name:"aws", Alias:"", Version:"", RawConfig:(*config.RawConfig)(0xc000394690)}
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ProviderConfigTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.MissingProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [DEBUG] resource aws_iam_role.codebuild_servicerole using provider provider.aws
+2019/03/19 10:25:21 [DEBUG] resource aws_iam_role_policy.code_build_policy using provider provider.aws
+2019/03/19 10:25:21 [DEBUG] resource aws_codebuild_project.tomcat using provider provider.aws
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.PruneProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ParentProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.graphTransformerMulti:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ModuleVariableTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RemovedModuleTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "aws_iam_role.codebuild_servicerole" references: []
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "aws_iam_role_policy.code_build_policy" references: [aws_iam_role.codebuild_servicerole]
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "aws_codebuild_project.tomcat" references: [aws_iam_role.codebuild_servicerole]
+2019/03/19 10:25:21 [DEBUG] ReferenceTransformer: "provider.aws" references: []
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.CountBoundaryTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.CloseProviderTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.CloseProvisionerTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+2019/03/19 10:25:21 [TRACE] Graph after step *terraform.TransitiveReductionTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+  provider.aws - *terraform.NodeApplyableProvider
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+  aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResource
+meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+provider.aws - *terraform.NodeApplyableProvider
+provider.aws (close) - *terraform.graphNodeCloseProvider
+  aws_codebuild_project.tomcat - *terraform.NodePlannableResource
+  aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (count boundary fixup) - *terraform.NodeCountBoundary
+  provider.aws (close) - *terraform.graphNodeCloseProvider
+2019/03/19 10:25:21 [DEBUG] Starting graph walk: walkPlan
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "provider.aws"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "meta.count-boundary (count boundary fixup)"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "provider.aws (close)"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "root"
+2019/03/19 10:25:21 [TRACE] dag/walk: added new vertex: "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_codebuild_project.tomcat"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "aws_codebuild_project.tomcat" waiting on "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (count boundary fixup)"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "provider.aws (close)" waiting on "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "aws_iam_role_policy.code_build_policy" waiting on "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "root" waiting on "provider.aws (close)"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "aws_iam_role.codebuild_servicerole" waiting on "provider.aws"
+2019/03/19 10:25:21 [TRACE] dag/walk: added edge: "meta.count-boundary (count boundary fixup)" waiting on "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "provider.aws (close)", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (count boundary fixup)", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "aws_codebuild_project.tomcat", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "aws_iam_role_policy.code_build_policy", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: dependencies changed for "aws_iam_role.codebuild_servicerole", sending new deps
+2019/03/19 10:25:21 [TRACE] dag/walk: walking "provider.aws"
+2019/03/19 10:25:21 [TRACE] vertex 'root.provider.aws': walking
+2019/03/19 10:25:21 [TRACE] vertex 'root.provider.aws': evaluating
+2019/03/19 10:25:21 [TRACE] [walkPlan] Entering eval tree: provider.aws
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInitProvider
+2019/03/19 10:25:21 [TRACE] root: eval: terraform.EvalNoop
+2019/03/19 10:25:21 [TRACE] root: eval: terraform.EvalNoop
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalInterpolateProvider
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalBuildProviderConfig
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalOpFilter
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:21 [TRACE] root: eval: *terraform.EvalConfigProvider
+2019-03-19T10:25:21.784+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 2019/03/19 10:25:21 [INFO] No assume_role block read from configuration
+2019-03-19T10:25:21.784+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 2019/03/19 10:25:21 [INFO] Building AWS auth structure
+2019-03-19T10:25:21.784+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 2019/03/19 10:25:21 [INFO] Setting AWS metadata API timeout to 100ms
+2019-03-19T10:25:21.786+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 2019/03/19 10:25:21 [INFO] Ignoring AWS metadata API endpoint at default location as it doesn't return any instance-id
+2019-03-19T10:25:21.787+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 2019/03/19 10:25:21 [INFO] AWS Auth provider used: "SharedCredentialsProvider"
+2019-03-19T10:25:21.787+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 2019/03/19 10:25:21 [DEBUG] Trying to get account information via sts:GetCallerIdentity
+2019-03-19T10:25:23.215+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 2019/03/19 10:25:23 [DEBUG] Trying to get account information via sts:GetCallerIdentity
+2019/03/19 10:25:25 [TRACE] [walkPlan] Exiting eval tree: provider.aws
+2019/03/19 10:25:25 [TRACE] dag/walk: walking "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': walking
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': evaluating
+2019/03/19 10:25:25 [TRACE] [walkPlan] Entering eval tree: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalCountCheckComputed
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalIf
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2019/03/19 10:25:25 [TRACE] [walkPlan] Exiting eval tree: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': expanding/walking dynamic subgraph
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] OrphanResourceCount: Starting...
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.OrphanResourceCountTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [DEBUG] Resource state not found for "aws_iam_role.codebuild_servicerole": aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [DEBUG] ReferenceTransformer: "aws_iam_role.codebuild_servicerole" references: []
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_iam_role.codebuild_servicerole - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] dag/walk: added new vertex: "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:25 [TRACE] dag/walk: walking "aws_iam_role.codebuild_servicerole"
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': walking
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role.codebuild_servicerole': evaluating
+2019/03/19 10:25:25 [TRACE] [walkPlan] Entering eval tree: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalValidateResource
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalReadState
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalDiff
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalCheckPreventDestroy
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalWriteState
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalWriteDiff
+2019/03/19 10:25:25 [TRACE] [walkPlan] Exiting eval tree: aws_iam_role.codebuild_servicerole
+2019/03/19 10:25:25 [TRACE] dag/walk: walking "aws_codebuild_project.tomcat"
+2019/03/19 10:25:25 [TRACE] dag/walk: walking "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': walking
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_codebuild_project.tomcat': walking
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': evaluating
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_codebuild_project.tomcat': evaluating
+2019/03/19 10:25:25 [TRACE] [walkPlan] Entering eval tree: aws_codebuild_project.tomcat
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:25 [TRACE] [walkPlan] Entering eval tree: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalCountCheckComputed
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalIf
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalCountCheckComputed
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalIf
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalCountFixZeroOneBoundary
+2019/03/19 10:25:25 [TRACE] [walkPlan] Exiting eval tree: aws_codebuild_project.tomcat
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_codebuild_project.tomcat': expanding/walking dynamic subgraph
+2019/03/19 10:25:25 [TRACE] [walkPlan] Exiting eval tree: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': expanding/walking dynamic subgraph
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] OrphanResourceCount: Starting...
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.ResourceCountTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] OrphanResourceCount: Starting...
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.OrphanResourceCountTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.OrphanResourceCountTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [DEBUG] Resource state not found for "aws_codebuild_project.tomcat": aws_codebuild_project.tomcat
+2019/03/19 10:25:25 [DEBUG] Resource state not found for "aws_iam_role_policy.code_build_policy": aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.AttachStateTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [DEBUG] ReferenceTransformer: "aws_iam_role_policy.code_build_policy" references: []
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.TargetsTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_iam_role_policy.code_build_policy - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [DEBUG] ReferenceTransformer: "aws_codebuild_project.tomcat" references: []
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.ReferenceTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] Graph after step *terraform.RootTransformer:
+
+aws_codebuild_project.tomcat - *terraform.NodePlannableResourceInstance
+2019/03/19 10:25:25 [TRACE] dag/walk: added new vertex: "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:25 [TRACE] dag/walk: added new vertex: "aws_codebuild_project.tomcat"
+2019/03/19 10:25:25 [TRACE] dag/walk: walking "aws_iam_role_policy.code_build_policy"
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': walking
+2019/03/19 10:25:25 [TRACE] dag/walk: walking "aws_codebuild_project.tomcat"
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_codebuild_project.tomcat': walking
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_iam_role_policy.code_build_policy': evaluating
+2019/03/19 10:25:25 [TRACE] [walkPlan] Entering eval tree: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:25 [TRACE] vertex 'root.aws_codebuild_project.tomcat': evaluating
+2019/03/19 10:25:25 [TRACE] [walkPlan] Entering eval tree: aws_codebuild_project.tomcat
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalSequence
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalInterpolate
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalValidateResource
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalGetProvider
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalValidateResource
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalReadState
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalDiff
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalCheckPreventDestroy
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalWriteState
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalWriteDiff
+2019/03/19 10:25:25 [TRACE] [walkPlan] Exiting eval tree: aws_iam_role_policy.code_build_policy
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalReadState
+2019/03/19 10:25:25 [TRACE] root: eval: *terraform.EvalDiff
+2019-03-19T10:25:25.777+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: panic: Error reading level config: strconv.ParseInt: parsing "1.6": invalid syntax
+2019-03-19T10:25:25.777+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 
+2019-03-19T10:25:25.777+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: goroutine 88 [running]:
+2019-03-19T10:25:25.777+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.(*ResourceData).get(0xc000108ee0, 0xc0008d7d70, 0x1, 0x1, 0xc0008d7d12, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+2019-03-19T10:25:25.777+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/resource_data.go:509 +0x450
+2019-03-19T10:25:25.777+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.(*ResourceData).getChange(0xc000108ee0, 0x3cb8ab2, 0x6, 0xc000001201, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+2019-03-19T10:25:25.778+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/resource_data.go:480 +0x129
+2019-03-19T10:25:25.778+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.(*ResourceData).diffChange(0xc000108ee0, 0x3cb8ab2, 0x6, 0xc0008d7d50, 0xc000108ee0, 0xc0008d7c80, 0x1, 0x1)
+2019-03-19T10:25:25.778+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/resource_data.go:457 +0x9e
+2019-03-19T10:25:25.778+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.schemaMap.diffSet(0xc0009a7080, 0x3cb8ab2, 0x6, 0xc00042e1e0, 0xc0008e7638, 0x4055520, 0xc000108ee0, 0x0, 0x0, 0x0)
+2019-03-19T10:25:25.778+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/schema.go:1031 +0x80
+2019-03-19T10:25:25.778+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.schemaMap.diff(0xc0009a7080, 0x3cb8ab2, 0x6, 0xc00042e1e0, 0xc00025b220, 0x4055520, 0xc000108ee0, 0x0, 0x0, 0x0)
+2019-03-19T10:25:25.778+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/schema.go:781 +0x4bf
+2019-03-19T10:25:25.779+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.schemaMap.Diff(0xc0009a7080, 0xc000831360, 0xc000487dd0, 0xc000005740, 0x2f4f680, 0xc000852000, 0x3721801, 0x8, 0x412378)
+2019-03-19T10:25:25.779+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/schema.go:425 +0x20d
+2019-03-19T10:25:25.779+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.(*Resource).Diff(0xc0004271f0, 0xc000831360, 0xc000487dd0, 0x2f4f680, 0xc000852000, 0x40bc01, 0xc000419b80, 0x4d46a3)
+2019-03-19T10:25:25.779+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/resource.go:250 +0x183
+2019-03-19T10:25:25.779+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema.(*Provider).Diff(0xc0008b4ee0, 0xc000831310, 0xc000831360, 0xc000487dd0, 0xc000388000, 0x18, 0x180d40)
+2019-03-19T10:25:25.779+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/helper/schema/provider.go:296 +0xa3
+2019-03-19T10:25:25.779+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/plugin.(*ResourceProviderServer).Diff(0xc00097b160, 0xc00025af40, 0xc0004af660, 0x0, 0x0)
+2019-03-19T10:25:25.779+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-aws/vendor/github.com/hashicorp/terraform/plugin/resource_provider.go:538 +0x5e
+2019-03-19T10:25:25.780+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: reflect.Value.call(0xc000370660, 0xc0000920c8, 0x13, 0x3cb5984, 0x4, 0xc000419f18, 0x3, 0x3, 0xc00036e0c0, 0xc00006aeb0, ...)
+2019-03-19T10:25:25.780+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/goenv/versions/1.11.5/src/reflect/value.go:447 +0x45b
+2019-03-19T10:25:25.780+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: reflect.Value.Call(0xc000370660, 0xc0000920c8, 0x13, 0xc000419f18, 0x3, 0x3, 0xc000833e00, 0x0, 0x0)
+2019-03-19T10:25:25.780+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/goenv/versions/1.11.5/src/reflect/value.go:308 +0xab
+2019-03-19T10:25:25.780+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: net/rpc.(*service).call(0xc000344040, 0xc0005840f0, 0xc000380150, 0xc000380160, 0xc000136800, 0xc0003a3cc0, 0x2f54fc0, 0xc00025af40, 0x16, 0x2f55000, ...)
+2019-03-19T10:25:25.781+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/goenv/versions/1.11.5/src/net/rpc/server.go:384 +0x155
+2019-03-19T10:25:25.781+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: created by net/rpc.(*Server).ServeCodec
+2019-03-19T10:25:25.781+0530 [DEBUG] plugin.terraform-provider-aws_v2.2.0_x4.exe: 	/opt/goenv/versions/1.11.5/src/net/rpc/server.go:481 +0x485
+2019/03/19 10:25:25 [ERROR] root: eval: *terraform.EvalDiff, err: unexpected EOF
+2019/03/19 10:25:25 [ERROR] root: eval: *terraform.EvalSequence, err: unexpected EOF
+2019/03/19 10:25:25 [TRACE] [walkPlan] Exiting eval tree: aws_codebuild_project.tomcat
+2019/03/19 10:25:25 [TRACE] dag/walk: upstream errored, not walking "provider.aws (close)"
+2019/03/19 10:25:25 [TRACE] dag/walk: upstream errored, not walking "meta.count-boundary (count boundary fixup)"
+2019/03/19 10:25:25 [TRACE] dag/walk: upstream errored, not walking "root"
+2019/03/19 10:25:25 [DEBUG] plugin: waiting for all plugin processes to complete...
+2019-03-19T10:25:25.790+0530 [WARN ] plugin: error closing client during Kill: err="connection is shut down"
+2019-03-19T10:25:25.796+0530 [DEBUG] plugin: plugin process exited: path=E:\terraform\terraform_practice\aws_codebuild\.terraform\plugins\windows_amd64\terraform-provider-aws_v2.2.0_x4.exe
