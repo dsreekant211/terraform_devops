@@ -84,8 +84,13 @@ resource "aws_iam_policy_attachment" "ec2-s3-codedeploy" {
   policy_arn = "${aws_iam_policy.ec2_codedeploy_policy.arn}"
 }
 ##################################################################
+resource "aws_iam_instance_profile" "codepipeline_profile" {
+  name = "codepipeline_profile"
+  role = "${aws_iam_role.codepipeline_role.name}"
+}
+
 resource "aws_iam_role" "codepipeline_role" {
-  name = "test-role"
+  name = "codepipeline_role"
 
   assume_role_policy = <<EOF
 {
@@ -103,9 +108,10 @@ resource "aws_iam_role" "codepipeline_role" {
 EOF
 }
 
-resource "aws_iam_role_policy" "codepipeline_policy" {
+resource "aws_iam_policy" "codepipeline_policy" {
   name = "codepipeline_policy"
-  role = "${aws_iam_role.codepipeline_role.id}"
+  path        = "/"
+  description = "My test policy"
 
   policy = <<EOF
 {
@@ -124,6 +130,17 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
       ]
     },
     {
+    "Action": [
+        "codedeploy:CreateDeployment",
+        "codedeploy:GetApplicationRevision",
+        "codedeploy:GetDeployment",
+        "codedeploy:GetDeploymentConfig",
+        "codedeploy:RegisterApplicationRevision"
+    ],
+    "Resource": "*",
+    "Effect": "Allow"
+   },
+    {
       "Effect": "Allow",
       "Action": [
         "codebuild:BatchGetBuilds",
@@ -134,4 +151,11 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
   ]
 }
 EOF
+}
+resource "aws_iam_policy_attachment" "codepipeline_attach" {
+  name       = "codepipeline_attach"
+//   users      = ["${aws_iam_user.user.name}"]
+  roles      = ["${aws_iam_role.codepipeline_role.name}"]
+//   groups     = ["${aws_iam_group.group.name}"]
+  policy_arn = "${aws_iam_policy.codepipeline_policy.arn}"
 }

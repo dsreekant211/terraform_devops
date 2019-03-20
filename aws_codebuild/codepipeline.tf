@@ -3,7 +3,7 @@ resource "aws_codepipeline" "tomcat_pipeline" {
   role_arn = "${aws_iam_role.codepipeline_role.arn}"
 
   artifact_store {
-    location = "sreekanth"
+    location = "sreekanthreddy"
     type     = "S3"
   }
 
@@ -13,16 +13,17 @@ resource "aws_codepipeline" "tomcat_pipeline" {
     action {
       name             = "Source"
       category         = "Source"
-      owner            = "AWS"
-      provider         = "S3"
+      owner            = "ThirdParty"
+      provider         = "GitHub"
+      output_artifacts = ["target"]
       version          = "1"
-      output_artifacts = ["test"]
+      // output_artifacts = ["test"]
 
       configuration  {
         Owner  = "dsreekant211"
-        Repo   = "aws_devops"
+        Repo   = "maven-project"
         Branch = "master"
-        OAuthToken = "5a11e251ef50cd6f0380315fb77b8263490998bf"
+        OAuthToken = "5ba3061cb13d842a3f198207ae0f2967f3010855"
         PollForSourceChanges = "true"
       }
     }
@@ -31,11 +32,11 @@ resource "aws_codepipeline" "tomcat_pipeline" {
     name = "Build"
 
     action {
-      name            = "Source"
-      category        = "Source"
-      owner           = "ThirdParty"
-      provider        = "GitHub"
-      output_artifacts = ["test"]
+      name            = "Build"
+      category        = "Build"
+      owner           = "AWS"
+      provider        = "CodeBuild"
+      input_artifacts = ["target"]
       version         = "1"
 
       configuration  {
@@ -51,11 +52,12 @@ resource "aws_codepipeline" "tomcat_pipeline" {
       category        = "Deploy"
       owner           = "AWS"
       provider        = "CodeDeploy"
-      input_artifacts = ["test"]
+      input_artifacts = ["target"]
       version         = "1"
 
       configuration  {
-        ProjectName = "${aws_codedeploy_app.tomcat_webapp.name}"
+        ApplicationName = "${aws_codedeploy_app.tomcat_webapp.name}"
+        DeploymentGroupName = "${aws_codedeploy_deployment_group.tomcat_webapp_gr.deployment_group_name}"
       }
     }
   }

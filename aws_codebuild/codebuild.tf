@@ -88,6 +88,7 @@ resource "aws_codebuild_project" "tomcat" {
   artifacts {
     type = "S3"
     location = "sreekanthreddy"
+    packaging = "ZIP"
   }
 
   environment {
@@ -97,7 +98,7 @@ resource "aws_codebuild_project" "tomcat" {
   }
    source {
     type            = "GITHUB"
-    location        = "https://github.com/dsreekant211/aws_devops.git"
+    location        = "https://github.com/dsreekant211/maven-project.git"
     git_clone_depth = 1
   }
 }

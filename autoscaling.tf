@@ -4,7 +4,7 @@ resource "aws_launch_configuration" "launch_webserver_ami" {
   instance_type   = "t2.micro"
   security_groups = ["${aws_security_group.sg_webserver1.id}"]
   key_name        = "sree"
-  iam_instance_profile  = "ec2_s3"
+  iam_instance_profile  = "ec2_s3_codedeploy"
 
   lifecycle {
     create_before_destroy = true
