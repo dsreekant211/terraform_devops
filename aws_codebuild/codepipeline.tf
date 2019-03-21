@@ -15,7 +15,8 @@ resource "aws_codepipeline" "tomcat_pipeline" {
       category         = "Source"
       owner            = "ThirdParty"
       provider         = "GitHub"
-      output_artifacts = ["target"]
+
+      output_artifacts = ["source"]
       version          = "1"
       // output_artifacts = ["test"]
 
@@ -23,7 +24,7 @@ resource "aws_codepipeline" "tomcat_pipeline" {
         Owner  = "dsreekant211"
         Repo   = "maven-project"
         Branch = "master"
-        OAuthToken = "5ba3061cb13d842a3f198207ae0f2967f3010855"
+        OAuthToken = "377f5814352c81c22d828412e5b8007e2002ec42"
         PollForSourceChanges = "true"
       }
     }
@@ -36,7 +37,8 @@ resource "aws_codepipeline" "tomcat_pipeline" {
       category        = "Build"
       owner           = "AWS"
       provider        = "CodeBuild"
-      input_artifacts = ["target"]
+      input_artifacts = ["source"]
+      output_artifacts = ["build"]
       version         = "1"
 
       configuration  {
@@ -52,7 +54,7 @@ resource "aws_codepipeline" "tomcat_pipeline" {
       category        = "Deploy"
       owner           = "AWS"
       provider        = "CodeDeploy"
-      input_artifacts = ["target"]
+      input_artifacts = ["build"]
       version         = "1"
 
       configuration  {

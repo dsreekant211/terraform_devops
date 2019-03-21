@@ -14,7 +14,7 @@ resource "aws_instance" "webserver1" {
   subnet_id                   = "${element(aws_subnet.public.*.id, count.index)}"
 
   tags {
-    Name = "webserver1"
+    Name = "image"
   }
 }
 resource "aws_security_group" "sg_webserver1" {
